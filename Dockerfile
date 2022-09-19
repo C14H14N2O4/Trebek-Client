@@ -1,6 +1,7 @@
 FROM node:latest
-WORKDIR /jeopardy_client
+WORKDIR /Trebek_client
 ENV PATH="./node_modules/.bin:$PATH"
 COPY . .
-RUN npm run build
+RUN npm ci --only=production
+EXPOSE 3000
 CMD ["npm", "start"]
